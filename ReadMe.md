@@ -26,6 +26,8 @@ Subiksha S
 Priyasha S
 Praveen Kumar
 ```          
+![](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
+
 
 # **📜PROJECT DESCRIPTION:**          
 Real-Time Communication System for Visually Impaired & Hearing Imparied.    
@@ -64,6 +66,8 @@ IBM Cloudant DB - Cloud Database
     <a href="https://github.com/IBM-EPBL/IBM-Project-45472-1660730304/blob/main/Project%20Design%20%26%20Planning/Ideation%20Phase/Literature%20Survey.pdf">CLICK HERE!  </a>
 </button>  
 
-![](https://github.com/Platane/snk/raw/output/github-contribution-grid-snake.svg)
+<div align="center">
+<img align="center" src="https://github.com/saadeghi/saadeghi/blob/master/dino.gif" />
+  </div>
 
 
