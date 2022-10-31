@@ -71,7 +71,7 @@ IBM Cloudant DB - Cloud Database
 
 <div align="center">
   
- # **“There is no reason and no way that a human mind can keep up with an artificial intelligence machine by 2035.”**      
+ # **“There is no reason and no way that a human mind can keep up with an artificial intelligence machine by 2035”**      
    </div> 
 
 
