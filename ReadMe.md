@@ -67,7 +67,8 @@ IBM Cloudant DB - Cloud Database
 </button>  
 
 **📈DataFlow Diagram**
-![dataflow-removebg-preview](https://user-images.githubusercontent.com/87802556/198960813-39ebcb79-f291-4376-93c3-ab39b27cf9f1.png)
+ ![dataflow](https://user-images.githubusercontent.com/87802556/198961184-5239797a-5f69-44c3-bdf3-e628d13814d2.png)
+
 
 
 
