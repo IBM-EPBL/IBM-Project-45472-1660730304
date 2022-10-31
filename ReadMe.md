@@ -66,6 +66,10 @@ IBM Cloudant DB - Cloud Database
     <a href="https://github.com/IBM-EPBL/IBM-Project-45472-1660730304/blob/main/Project%20Design%20%26%20Planning/Ideation%20Phase/Literature%20Survey.pdf">CLICK HERE!  </a>
 </button>  
 
+**📈DataFlow Diagram**
+![dataflow](https://user-images.githubusercontent.com/87802556/198960536-a6f50cd9-f5a4-4bb5-ae16-94ac168d9154.png)
+
+
 <div align="center">
 <img align="center" src="https://github.com/saadeghi/saadeghi/blob/master/dino.gif" />
   </div>
