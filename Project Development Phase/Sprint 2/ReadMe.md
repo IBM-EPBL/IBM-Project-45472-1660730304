@@ -1,5 +1,5 @@
-<div text-align="center">
-  ### **🎯DataSet for Object Detection🎯**     
+<div align="center">
+  ### 🎯DataSet for Object Detection🎯     
    </div> 
  
 
