@@ -14,4 +14,7 @@ Flask
 HTML
 CSS
 JavaScript
+
+IBM DB2 [DataBase]
+ --> pip install ibm_db
 ```   
