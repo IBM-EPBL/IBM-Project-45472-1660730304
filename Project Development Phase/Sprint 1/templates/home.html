@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shlens</title>
+    <style>
+        html,
+        body {
+           background-image: url('https://assets.codepen.io/191583/galaxy_starfield.png');
+           color: aqua;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        lume-scene {
+           /* Prevent touch scrolling from interfering with out pointermove handler. */
+           touch-action: none;
+        }
+  
+        lume-scene * {
+           pointer-events: none;
+        }   
+  
+     </style>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <script src="https://unpkg.com/lume@0.3.0-alpha.11/dist/global.js"></script>
+
+<!-- Polyfill for Pointer Events (boo Safari) -->
+<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+
+<!-- By default a <lume-scene> fills the space of it's parent, in this case the <body>. -->
+<lume-scene id="scene" webgl touch-action="none">
+	<lume-camera-rig align-point="0.5 0.5 0.5" initial-polar-angle="0" min-distance="90" max-distance="1000" initial-distance="500"></lume-camera-rig>
+
+	<!-- Stars -->
+	<lume-sphere id="stars" texture="//assets.codepen.io/191583/galaxy_starfield.png" receive-shadow="false" has="basic-material" sidedness="back" size="4000 4000 4000" align-point="0.5 0.5 0.5" mount-point="0.5 0.5 0.5" color="white"></lume-sphere>
+
+	<!-- Sun light -->
+	<lume-node align-point="0.5 0.5" size="0 0" rotation="0 -50 0">
+		<lume-node align-point="0.5 0.5" size="0 0" rotation="10 0 0">
+			<lume-point-light id="light" size="0 0" position="0 0 1800" color="white" intensity="2" distance="10000" shadow-map-width="2048" shadow-map-height="2048" shadow-camera-far="20000"></lume-point-light>
+		</lume-node>
+	</lume-node>
+
+	<!-- Earth -->
+	<lume-node align-point="0.5 0.5" size="0 0 0">
+
+		<lume-node rotation="0 180 0">
+			<lume-sphere id="earth" texture="//assets.codepen.io/191583/earthmap1k.jpg" bump-map="//assets.codepen.io/191583/earthbump1k.jpg" specular-map="//assets.codepen.io/191583/earthspec1k.jpg" size="420 420 420" mount-point="0.5 0.5 0.5" align-point="0.5 0.5" color="white">
+				<lume-sphere id="clouds" texture="//assets.codepen.io/191583/earthclouds.png" opacity="0.7" size="425 425 425" align-point="0.5 0.5 0.5" mount-point="0.5 0.5 0.5" color="white"></lume-sphere>
+			</lume-sphere>
+		</lume-node>
+
+		<lume-node align-point="0.5 0.5" rotation="90 10 0">
+			<lume-node id="moonRotator" align-point="0.10 0.10" rotation="0 0 110">
+				<lume-sphere texture="//assets.codepen.io/191583/moon.jpg" position="250" size="10 10 10" mount-point="0.5 0.5 0.5" color="white"></lume-sphere>
+			</lume-node>
+		</lume-node>
+
+	</lume-node>
+</lume-scene>
+    <div class="full-page">
+
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+            
+        
+        <center><p style="color: aliceblue;">{{msg}}</p></center>
+        
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+                    <button type='button' onclick='register()' class='toggle-btn'>Register</button>
+                </div>
+                <form id='login' action="/login" class='input-group-login' method="POST">
+                    <input type='text' class='input-field' name="email" placeholder='Email Id' required>
+                    <input type='password' name="password" class='input-field' placeholder='Enter Password' required>
+                    <center><a>&nbsp;</a></center>
+                    <center><a>Welcome To Shlens</a></center>
+                    <center><a>&nbsp;</a></center>
+                    <input style="color:black" type='submit' class='submit-btn'></input>
+                </form>
+
+                <form action='/register' id='register' class='input-group-register' method="post">
+                    <input type='text' class='input-field' placeholder='First Name' name="fname" required>
+                    <input type='text' class='input-field' placeholder='Last Name ' name="lname" required>
+                    <input type='email' class='input-field' placeholder='Email Id' name='email' required>
+                    <input type='password' class='input-field' placeholder='Enter Password' name="password" required>
+                    <input type='password' class='input-field' placeholder='Confirm Password' required>
+                    <input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
+                    <button type='submit' class='submit-btn'>Register</button>
+                </form>
+            </div>
+        
+    </div>
+    <script>
+
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+        }
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+    </script>
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+
+        
+
+
+
+        //-Background Earth-//
+   LUME.defineElements();
+
+   // We wrote the rotation function this way so that it would always start    
+   // at the angle defined in the HTML.
+   let lastTime = performance.now();
+   let dt = 0;
+   moonRotator.rotation = (x, y, z, time) => {
+       dt = time - lastTime;
+       lastTime = time;
+       return [x, y, z + dt * 0.01];
+   };
+
+   // ^ We could've written it more simply but it would start at some angle
+   // based on time instead of our preferred angle:
+   // moonRotator.rotation = (x, y, z, t) => [x, y, t * 0.004];
+
+   earth.rotation = (x, y, z, t) => [x, t * 0.01, z];
+   clouds.rotation = (x, y, z, t) => [x, -t * 0.003, z];
+    </script>
+</body>
+
+</html
