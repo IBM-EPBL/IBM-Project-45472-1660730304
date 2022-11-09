@@ -6,6 +6,11 @@
 ### **🐺Login/Registration Using :**    
 ```html                      
 Flask
+ --> pip install Python==3.9.12 
+ --> pip install Flask==1.1.2 
+ --> pip install Werkzeug==2.0.3 
+ --> pip install ibm_db
+ 
 HTML
 CSS
 JavaScript
