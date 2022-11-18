@@ -99,12 +99,15 @@ A data set is a collection of related, discrete items of related data that may b
 A data set is organized into some type of data structure, 
 which is then converted to arrays for processing object detection.
 ```  
-### **🎯Accuracy - 100%**
-![Screenshot_2022-11-18_10_41_06](https://user-images.githubusercontent.com/87802556/202668268-eb3b3602-006a-4c7f-89a1-527a0863d6ce.png)
 
 
 <div align="center">
 <img align="center" src="https://user-images.githubusercontent.com/87802556/200938962-6a0f4260-92a5-47d3-b771-9d44ad00c3d1.gif" />
+  </div>
+  
+<div align="center"> 
+### **🎯Accuracy - 100%**
+![Screenshot_2022-11-18_10_41_06](https://user-images.githubusercontent.com/87802556/202668268-eb3b3602-006a-4c7f-89a1-527a0863d6ce.png)
   </div>
 
 
