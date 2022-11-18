@@ -106,11 +106,12 @@ which is then converted to arrays for processing object detection.
   </div>
 
 <div align="center"> 
-  ## **🎯Accuracy - 100%**
+  ## **Accuracy - 100%**
 </div>
    
-
+<div align="center">
  <img align="center" src="https://user-images.githubusercontent.com/87802556/202668268-eb3b3602-006a-4c7f-89a1-527a0863d6ce.png" />
+  </div>
 
 
 <div align="center">
