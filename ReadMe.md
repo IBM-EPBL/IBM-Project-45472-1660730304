@@ -112,6 +112,10 @@ which is then converted to arrays for processing object detection.
 <div align="center">
  <img align="center" src="https://user-images.githubusercontent.com/87802556/202668268-eb3b3602-006a-4c7f-89a1-527a0863d6ce.png" />
   </div>
+  
+### **🐺Prediction :**  
+
+![test](https://user-images.githubusercontent.com/87802556/202819616-0427d991-7cda-43ba-817c-1a8eaa091a03.png)
 
 
 <div align="center">
