@@ -106,7 +106,7 @@ which is then converted to arrays for processing object detection.
   </div>
 
 <div align="center"> 
-  ## Accuracy - 100%
+  Accuracy - 100%
 </div>
    
 <div align="center">
