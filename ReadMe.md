@@ -106,8 +106,8 @@ which is then converted to arrays for processing object detection.
   </div>
   
 <div align="center"> 
-### **🎯Accuracy - 100%**
-![Screenshot_2022-11-18_10_41_06](https://user-images.githubusercontent.com/87802556/202668268-eb3b3602-006a-4c7f-89a1-527a0863d6ce.png)
+  ### **🎯Accuracy - 100%**
+  <img align="center" src="https://user-images.githubusercontent.com/87802556/202668268-eb3b3602-006a-4c7f-89a1-527a0863d6ce.png" />
   </div>
 
 
