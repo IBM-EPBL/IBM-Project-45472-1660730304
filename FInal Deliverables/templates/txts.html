@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shlens</title>
+    <style>
+        html,
+        body {
+           background-image: url('https://assets.codepen.io/191583/galaxy_starfield.png');
+           color: rgb(185, 185, 185);
+            width: 100%;
+            height: 100%;
+            margin: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+        lume-scene {
+           /* Prevent touch scrolling from interfering with out pointermove handler. */
+           touch-action: none;
+        }
+  
+        lume-scene * {
+           pointer-events: none;
+        }   
+        .glow {
+            
+            color: aqua;
+            text-align: center;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+          }
+          
+          @-webkit-keyframes glow {
+            from {
+              text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 
+                           0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+            }
+            to {
+              text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 
+            }
+        }
+
+        div {
+            width: 320px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.575);
+            
+            margin: 0;
+          }
+        box {
+            width: 320px;
+            padding: 10px;
+            background-color: rgba(39, 39, 39, 0.473);
+            border: 2px solid rgb(255, 0, 255);
+            margin: 0;
+        }  
+
+                
+        .glow-on-hover {
+            width: 220px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: aqua;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+        }
+        
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+        
+        .glow-on-hover:active {
+            color: #000
+        }
+        
+        .glow-on-hover:active:after {
+            background: transparent;
+        }
+        
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+        
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+        
+        @keyframes glowing {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+  
+     </style>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <script src="https://unpkg.com/lume@0.3.0-alpha.11/dist/global.js"></script>
+
+<!-- Polyfill for Pointer Events (boo Safari) -->
+<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+
+<!-- By default a <lume-scene> fills the space of it's parent, in this case the <body>. -->
+<lume-scene id="scene" webgl touch-action="none">
+	<lume-camera-rig align-point="0.5 0.5 0.5" initial-polar-angle="0" min-distance="90" max-distance="1000" initial-distance="500"></lume-camera-rig>
+
+	<!-- Stars -->
+	<lume-sphere id="stars" texture="//assets.codepen.io/191583/galaxy_starfield.png" receive-shadow="false" has="basic-material" sidedness="back" size="4000 4000 4000" align-point="0.5 0.5 0.5" mount-point="0.5 0.5 0.5" color="white"></lume-sphere>
+
+	<!-- Sun light -->
+	<lume-node align-point="0.5 0.5" size="0 0" rotation="0 -50 0">
+		<lume-node align-point="0.5 0.5" size="0 0" rotation="10 0 0">
+			<lume-point-light id="light" size="0 0" position="0 0 1800" color="white" intensity="2" distance="10000" shadow-map-width="2048" shadow-map-height="2048" shadow-camera-far="20000"></lume-point-light>
+		</lume-node>
+	</lume-node>
+
+	<!-- Earth -->
+	<lume-node align-point="0.5 0.5" size="0 0 0">
+
+		<lume-node rotation="0 180 0">
+			<lume-sphere id="earth" texture="//assets.codepen.io/191583/earthmap1k.jpg" bump-map="//assets.codepen.io/191583/earthbump1k.jpg" specular-map="//assets.codepen.io/191583/earthspec1k.jpg" size="420 420 420" mount-point="0.5 0.5 0.5" align-point="0.5 0.5" color="white">
+				<lume-sphere id="clouds" texture="//assets.codepen.io/191583/earthclouds.png" opacity="0.7" size="425 425 425" align-point="0.5 0.5 0.5" mount-point="0.5 0.5 0.5" color="white"></lume-sphere>
+			</lume-sphere>
+		</lume-node>
+
+		<lume-node align-point="0.5 0.5" rotation="90 10 0">
+			<lume-node id="moonRotator" align-point="0.10 0.10" rotation="0 0 110">
+				<lume-sphere texture="//assets.codepen.io/191583/moon.jpg" position="250" size="10 10 10" mount-point="0.5 0.5 0.5" color="white"></lume-sphere>
+			</lume-node>
+		</lume-node>
+
+	</lume-node>
+</lume-scene>
+    <div class="full-page">
+
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+            
+                <center><h1 class="glow" style="font-size: 70px;"> IBM </h1></center>
+                <center><h2> Real-Time Communication System Powered by AI for Hearing Impaired </h2></center>
+                <center><h2>Welcome To RA</h2></center>
+                <center><a>&nbsp;</a></center>
+                <center><p style="font-size:16px">In this sign language recognition project, we create a sign detector, which detects alphabets from A to Z hand gestures according to the American Sign Language</p></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><a>&nbsp;</a></center>
+                <center><h3 class="glow">Text To Speech converter</h3><center>
+                <center><a>&nbsp;</a></center>
+                <center>
+                    <form action = "/getdata4" method ="post">
+                        <button class="glow-on-hover" type="submit">Run T2S</button>
+                        <input type='text' class='input-field' style='text-align:center;' placeholder='Type Here' name="speech" required>
+                    </form>
+                    </center>
+                    
+        
+    </div>
+    <script>
+        //-Background Earth-//
+   LUME.defineElements();
+
+   // We wrote the rotation function this way so that it would always start    
+   // at the angle defined in the HTML.
+   let lastTime = performance.now();
+   let dt = 0;
+   moonRotator.rotation = (x, y, z, time) => {
+       dt = time - lastTime;
+       lastTime = time;
+       return [x, y, z + dt * 0.01];
+   };
+
+   // ^ We could've written it more simply but it would start at some angle
+   // based on time instead of our preferred angle:
+   // moonRotator.rotation = (x, y, z, t) => [x, y, t * 0.004];
+
+   earth.rotation = (x, y, z, t) => [x, t * 0.01, z];
+   clouds.rotation = (x, y, z, t) => [x, -t * 0.003, z];
+    </script>
+</body>
+
+</html

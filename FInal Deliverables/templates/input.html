@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: rgb(156, 156, 156);
+        }
+        
+        .img {
+            height: auto;
+            width: auto;
+        }
+        
+        html {
+            box-sizing: border-box;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        .column {
+            float: left;
+            width: 20%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 6px;
+        }
+        
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: black;
+            color: rgb(156, 156, 156);
+        }
+        
+        .container {
+            padding: 0 16px;
+        }
+        
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .title {
+            color: grey;
+        }
+        
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .button:hover {
+            background-color: #555;
+        }
+        
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+        
+        .about-cross {
+            padding: 5px;
+            text-align: left;
+        }
+
+        .glow {
+            color: aqua;
+            text-align: center;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+          }
+    </style>
+</head>
+<body style="background-image : url('https://assets.codepen.io/191583/galaxy_starfield.png')">
+    <div class="about-section">
+        <h1 class="glow" style="font-size: 20px;"> IBM </h1>
+        
+        <h2> Real-Time Communication System Powered by AI for Specially Abled </h2>
+        <h3>Welcome {{text}}</h3>
+    </div>
+    <div>
+        <p> </p>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <form action = "/asl" method ="post">
+                    <img src="/static/img/asl.png" alt="ASL" type="submit" style="width:100%">
+                </form>
+                <div class="container">
+                    <h2>ASL Recognition</h2>
+                    <p class="title">American Sign Language</p>
+                    <form action = "/asl" method ="post">
+                        <p><button class=" button ">Check Out</button></p>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="card ">
+                <form action = "/object" method ="post">
+                    <img src="/static/img/object.png" alt="OBJECT" type="submit" style="width:100% ">
+                </form>
+                <div class="container ">
+                    <h2>Object Recognition</h2>
+                    <p class="title ">YOLO Object Detection</p>
+                    <form action = "/object" method ="post">
+                        <p><button class=" button ">Check Out</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="card ">
+                <form action = "/speech" method ="post">
+                    <img src="/static/img/speech.png" alt="KIOTcanteen" type="submit" style="width:100% ">
+                </form>
+                <div class="container ">
+                    <h2>Speech Recognition</h2>
+                    <p class="title ">Speech 2 Text</p>
+                    <form action = "/speech" method ="post">
+                        <p><button class=" button ">Check Out</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="card ">
+                <form action = "/aloud" method ="post">
+                    <img src="/static/img/aloud.png" alt="contactus" type="submit" style="width:100% ">
+                </form>
+                <div class="container ">
+                    <h2>Read Aloud</h2>
+                    <p class="title ">Watson Text 2 Speech</p>
+                    <form action = "/aloud" method ="post">
+                        <p><button class=" button ">Check Out</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="column ">
+            <div class="card ">
+                <form action = "/about" method ="post">
+                    <img src="/static/img/about.png" alt="contactus" type="submit" style="width:100% ">
+                </form>
+                <div class="container ">
+                    <h2>About</h2>
+                    <p class="title ">Team/Contact Information</p>
+                    <form action = "/about" method ="post">
+                        <p><button class=" button ">Check Out</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</body>
+</html>

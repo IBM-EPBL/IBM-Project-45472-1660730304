@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: rgb(156, 156, 156);
+        }
+        
+        .img {
+            height: auto;
+            width: auto;
+        }
+        
+        html {
+            box-sizing: border-box;
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+        
+        .column {
+            float: left;
+            width: 20%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 6px;
+        }
+        
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: black;
+            color: rgb(156, 156, 156);
+        }
+        
+        .container {
+            padding: 0 16px;
+        }
+        
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .title {
+            color: grey;
+        }
+        
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .button:hover {
+            background-color: #555;
+        }
+        
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+        
+        .about-cross {
+            padding: 5px;
+            text-align: left;
+        }
+
+        .glow {
+            color: aqua;
+            text-align: center;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+          }
+    </style>
+</head>
+<body style="background-image : url('https://assets.codepen.io/191583/galaxy_starfield.png')">
+    <div class="about-section">
+        <h1 class="glow" style="font-size: 20px;"> TEAM ID : PNT2022TMID30205 </h1>
+        
+        <h2> Real-Time Communication System Powered by AI for Specially Abled </h2>
+        <h3>AboutUs</h3>
+    </div>
+    <div>
+        <p> </p>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <form action = "/svr" method ="post">
+                    <img src="/static/img/svr.png" alt="svr" type="submit" style="width:100%">
+                </form>
+                <div class="container">
+                    <h2>Siva Vimel Rajhen</h2>
+                    <p class="title">Team Leader</p>
+                    <form action = "/svr" method ="post">
+                        <p><button class=" button ">LinkedIn</button></p>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="card ">
+                <form action = "/ss" method ="post">
+                    <img src="/static/img/ss.png" alt="ss" type="submit" style="width:100% ">
+                </form>
+                <div class="container ">
+                    <h2>Subiksha S</h2>
+                    <p class="title ">Team Member</p>
+                    <form action = "/ss" method ="post">
+                        <p><button class=" button ">LinkedIn</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="card ">
+                <form action = "/ps" method ="post">
+                    <img src="/static/img/ps.png" alt="ps" type="submit" style="width:100% ">
+                </form>
+                <div class="container ">
+                    <h2>Priyasha S</h2>
+                    <p class="title ">Team Member</p>
+                    <form action = "/ps" method ="post">
+                        <p><button class=" button ">LinkedIn</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="column ">
+            <div class="card ">
+                <form action = "/pks" method ="post">
+                    <img src="/static/img/pks.png" alt="pks" type="submit" style="width:100% ">
+                </form>
+                <div class="container ">
+                    <h2>Praveen Kumar S</h2>
+                    <p class="title ">Team Member</p>
+                    <form action = "/pks" method ="post">
+                        <p><button class=" button ">LinkedIn</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="column ">
+            <div class="card ">
+                <form action = "/github" method ="post">
+                    <img src="/static/img/github.png" alt="github" type="submit" style="width:100% ">
+                </form>
+                <div class="container ">
+                    <h2>GitHub Repository</h2>
+                    <p class="title ">IBM GitHub Repository</p>
+                    <form action = "/github" method ="post">
+                        <p><button class=" button ">Git</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</body>
+</html>
